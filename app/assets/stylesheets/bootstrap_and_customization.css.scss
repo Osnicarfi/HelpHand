@@ -1,7 +1,14 @@
 
 $body-bg: #CBFFE1;
+$jumbotron-bg: rgba(0,0,0,0.5);
 
-$jumbotron-bg: #F6F6F6;
+	body{
+	background: url('/images/neighborhood.jpg');
+	background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 
 .container{
 	text-align: center
@@ -9,20 +16,23 @@ $jumbotron-bg: #F6F6F6;
 }
 @import 'bootstrap';
 
+
 h2{
 	color: red;
 }
 
 p{
-	color: #0A519F;
+	color: #C1E5F5;
 	text-align: left
 }
 
 h3{
+	color: #FFB186;
 	text-align: left
 }
 
 h4{
 	font-size: 30px;
+	color: white;
 }
 
