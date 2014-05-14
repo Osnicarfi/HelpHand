@@ -1,5 +1,4 @@
-
-$body-bg: #CBFFE1;
+$navbar-inverse-brand-color:      #c0392b;
 $jumbotron-bg: rgba(0,0,0,0.5);
 
 	body{
@@ -20,18 +19,22 @@ h2{
 
 p{
 	color: #C1E5F5;
-	text-align: left
 }
 
 h3{
 	color: #FFB186;
-	text-align: left
 }
 
 h4{
 	font-size: 30px;
-	color: white;
 	color: #DCAD65;
-	text-align: left
 }
 
+a{ color: red }
+a:hover{ color: white }
+
+
+.navbar-brand {
+     font-weight: bold;
+
+}
