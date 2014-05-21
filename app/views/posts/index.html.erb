@@ -1,32 +1,30 @@
-<h1>Listing posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>User's email</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.description %></td>
-        <td><%= post.user.email if post.user %></td>
-        <td><%= link_to 'Show', post %></td>
-        <% if post.user == current_user %>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<%= render 'pages/home' unless user_signed_in? %>
 <% if user_signed_in? %>
-  <%= link_to 'New Post', new_post_path %>
+<h1>Helps</h1>
+
+
+  
+   
+    <% @posts.each do |post| %>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= post.user.email if post.user %> </h3>
+        </div>
+   
+        <div class="panel-body">
+
+            <%= post.description %>
+            
+            <%= link_to 'Show', post %>
+            <% if post.user == current_user %>
+            <%= link_to 'Edit', edit_post_path(post) %>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        
+              <% end %>
+        </div>
+      </div>
 <% end %>
+<% end %>
+
+
+
