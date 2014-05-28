@@ -1,11 +1,49 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
+<div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= @post.user.name %></h3>
+        </div>
+   
+        <div class="panel-body">
+
+            <%= @post.description %>
+            </div>
+            </div>
 
 <% if @post.user == current_user %>
 	<%= link_to 'Edit', edit_post_path(@post) %> |
 <% end %>
 <%= link_to 'Back', posts_path %>
+
+<h7> Nearby Locations </h7>
+<ul>
+    <% for post in @post.nearbys(10) %>
+        <li><%= link_to post.user.current_sign_in_ip, post %> (<%= post.distance.round(2) %> miles)</li>
+        <% end %>
+</ul>
+
+
+
+
+<h2>Mãozinhas:</h2>
+
+<div class="well">
+<div id="comments">
+	   <%= render :partial => @post.comments %>
+ </div>
+ </div>
+
+
+
+
+ <%= form_for [@post, Comment.new] do |f| %>
+        <p>
+                <%= f.label :body, "New comment" %><br/>
+                <%= f.text_area :body %>
+
+        </p>
+        <p><%= f.submit "Add comment" %></p>
+
+
+<% end %>

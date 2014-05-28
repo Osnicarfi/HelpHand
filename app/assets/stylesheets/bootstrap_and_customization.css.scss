@@ -1,5 +1,7 @@
+
 $navbar-inverse-brand-color:      #c0392b;
 $jumbotron-bg: rgba(0,0,0,0.5);
+$well-bg: rgba(0,0,0,0.5);
 
 	body{
 	background: url('/images/neighborhood.jpg');
@@ -31,7 +33,7 @@ h4{
 }
 
 a{ color: red }
-a:hover{ color: white }
+a:hover{ color: green }
 
 
 .navbar-brand {

@@ -3,9 +3,17 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+         
 
          has_many :posts
+         has_many :comments
 
          validates :name, presence: true
 
+         geocoded_by :ip_address,
+  :latitude => :lat, :longitude => :lon
+after_validation :geocode
+
+
+       
 end
