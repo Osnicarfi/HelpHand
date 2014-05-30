@@ -5,7 +5,11 @@ Projeto::Application.routes.draw do
    resources :comments
    end 
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+
+
+
   root "posts#index"
   get "faq" => "pages#faq"
   # The priority is based upon order of creation: first created -> highest priority.

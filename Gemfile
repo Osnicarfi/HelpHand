@@ -15,6 +15,7 @@ gem 'devise', '~>3.1.0.rc2'
 gem 'masonry-rails', '~> 0.2.0'
 gem 'geocoder'
 gem 'protected_attributes'
+gem 'omniauth-facebook'
 
 
 group :development, :test do

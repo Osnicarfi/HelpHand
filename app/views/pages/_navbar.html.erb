@@ -27,8 +27,12 @@
           <li><%= link_to "Account Settings", edit_user_registration_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% else %>
-         <li><%= link_to "Log in", new_user_session_path %></li>
-         <li><%= link_to "Sign Up", new_user_registration_path %></li>  
+
+        <li><%= link_to image_tag("/images/login.jpg"), user_omniauth_authorize_path(:facebook) %></li>
+        
+        
+         <li><%= link_to "Entrar sem Facebook", new_user_session_path %></li>
+         <li><%= link_to "Criar conta sem Facebook", new_user_registration_path %></li>  
         <%end%> 
 
       

@@ -14,15 +14,18 @@
         <div class="panel-body">
 
             <%= post.description %>
-            
+            <br>
             <%= link_to 'Give a hand!' , post %> 
             <% if post.user == current_user %>
             <%= link_to 'Editar', edit_post_path(post) %>
             <%= link_to raw('<span class="glyphicon glyphicon-trash"></span>'), post, method: :delete, data: { confirm: 'Are you sure?' } %>
         
               <% end %>
+              <br>
+              <%= post.user.distance_from(current_user) %> miles
         </div>
       </div>
+
 
 <% end %>
 <% end %>
